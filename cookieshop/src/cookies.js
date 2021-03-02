@@ -5,7 +5,7 @@ import kinder from "./images/kinder.jpg";
 const cookies = [
   {
     id: 1,
-    name: "Red Velvet Cookies",
+    name: "Kinder Cookies",
     price: 500,
     image: kinder,
   },

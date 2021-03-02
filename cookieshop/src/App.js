@@ -4,6 +4,7 @@ import { ThemeProvider } from "styled-components";
 
 //components
 import CookieList from "./components/CookieList";
+
 import Home from "./components/Home";
 import Navbar from "./components/Navbar";
 
