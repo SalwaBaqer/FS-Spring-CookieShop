@@ -4,16 +4,27 @@ export const GlobalStyle = createGlobalStyle`
   body {
     color: ${(props) => props.theme.mainColor};
     background-color: ${(props) => props.theme.backgroundColor}
+
   }
+`;
+
+export const ThemeButton = styled.button`
+  font-size: 1em;
+  margin: 1.25em;
+  padding: 0.25em 1em;
+  border-radius: 3px;
+  background-color: ${(props) => props.theme.mainColor};
+  color: ${(props) => props.theme.backgroundColor};
 `;
 
 export const Title = styled.h1`
   text-align: center;
-  color: #f23d5e;
+  color: ${(props) => props.theme.pink};
 `;
 
 export const Description = styled.h4`
-  text-align: center;
+  margin-left: 20%;
+  font-family: Papyrus;
 `;
 
 export const ShopImage = styled.img`
@@ -24,24 +35,28 @@ export const ShopImage = styled.img`
 `;
 
 export const ListWrapper = styled.div`
+  margin-top: 5%;
+
   align-items: center;
   justify-content: center;
   display: flex;
 `;
 
 export const CookieWrapper = styled.div`
-  margin-top: 20px;
+
+margin-left: 1%;
 
   img {
     width: 250px;
     height: 200px;
+   margin-left: 10%
+  }
+  p{
+    margin-left: 19%  
+  }
+  .cookie-price{
+    color: ${(props) => props.theme.pink}
   }
 
-  p {
-    text-align: center;
-    &.cookie-price {
-      color: ${(props) => props.theme.pink};
-      font-weight: bold;
-    }
   }
 `;

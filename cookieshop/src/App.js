@@ -1,32 +1,42 @@
-import "./App.css";
-
 // Styling
-import { Title, Description, ShopImage, GlobalStyle } from "./styles";
+import { Title, Description, GlobalStyle, ThemeButton } from "./styles";
 import { ThemeProvider } from "styled-components";
 
 //components
 import CookieList from "./components/CookieList";
 
+//state
+import React, { useState } from "react";
+
 //theme
 const theme = {
-  mainColor: "#242424", // main font color
-  backgroundColor: "#fefafb", // main background color
-  pink: "#F2637E",
+  light: {
+    mainColor: "#242424", // main font color
+    backgroundColor: "#fefafb", // main background color
+    pink: "#F2637E",
+  },
+  dark: {
+    mainColor: "#fefafb", // main font color
+    backgroundColor: "#242424", // main background color
+    pink: "#F2637E",
+  },
 };
 
 function App() {
+  const [currentTheme, setCurrentTheme] = useState("light");
+  const toggleTheme = () => {
+    setCurrentTheme(currentTheme === "light" ? "dark" : "light");
+  };
   return (
-    <ThemeProvider theme={theme}>
-      <div>
-        <GlobalStyle />
-        <Title>Cookies and Beyond</Title>
-        <Description>Delightful piece of heaven</Description>
-        <ShopImage
-          alt="cookie shop"
-          src="https://rinnoo.net/f/CMS/Attachments/2020/11/29/70321_Cookie-Dough_9_-_Qu80_RT1600x1024-_OS1080x1080-_RD1080x1080-.jpg"
-        />
-        <CookieList />
-      </div>
+    <ThemeProvider theme={theme[currentTheme]}>
+      <GlobalStyle />
+      <ThemeButton onClick={toggleTheme}>
+        {currentTheme === "light" ? "Dark" : "Light"} Mode
+      </ThemeButton>
+      <Title>Cookies and Beyond</Title>
+      <Description>Delightful Piece Of heaven</Description>
+
+      <CookieList />
     </ThemeProvider>
   );
 }
