@@ -1,4 +1,8 @@
+//styled-components
 import styled, { createGlobalStyle } from "styled-components";
+
+//link
+import { Link } from "react-router-dom";
 
 export const GlobalStyle = createGlobalStyle`
   body {
@@ -10,7 +14,7 @@ export const GlobalStyle = createGlobalStyle`
 
 export const ThemeButton = styled.button`
   font-size: 1em;
-  margin: 1.25em;
+  margin: 0.25em;
   padding: 0.25em 1em;
   border-radius: 3px;
   background-color: ${(props) => props.theme.mainColor};
@@ -23,7 +27,7 @@ export const Title = styled.h1`
 `;
 
 export const Description = styled.h4`
-  margin-left: 20%;
+  text-align: center;
   font-family: Papyrus;
 `;
 
@@ -31,7 +35,7 @@ export const ShopImage = styled.img`
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 30%;
+  width: 45%;
 `;
 
 export const ListWrapper = styled.div`
@@ -52,11 +56,30 @@ margin-left: 1%;
    margin-left: 10%
   }
   p{
-    margin-left: 19%  
+
+ text-align: center;
   }
   .cookie-price{
+    font-weight: bold;
+    text-align: center;
     color: ${(props) => props.theme.pink}
   }
 
   }
+`;
+
+export const Logo = styled(Link)`
+  padding: 0.25em;
+
+  img {
+    width: 5rem;
+  }
+`;
+export const ToCookieList = styled(Link)`
+  text-decoration: none;
+  color: ${(props) => props.theme.backgroundColor};
+`;
+
+export const NavStyled = styled.nav`
+  background-color: ${(props) => props.theme.backgroundColor};
 `;

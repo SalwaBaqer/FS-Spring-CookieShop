@@ -1,12 +1,17 @@
 // Styling
-import { Title, Description, GlobalStyle, ThemeButton } from "./styles";
+import { GlobalStyle } from "./styles";
 import { ThemeProvider } from "styled-components";
 
 //components
 import CookieList from "./components/CookieList";
+import Home from "./components/Home";
+import Navbar from "./components/Navbar";
 
 //state
 import React, { useState } from "react";
+
+//Routing
+import { Route, Switch } from "react-router";
 
 //theme
 const theme = {
@@ -30,13 +35,16 @@ function App() {
   return (
     <ThemeProvider theme={theme[currentTheme]}>
       <GlobalStyle />
-      <ThemeButton onClick={toggleTheme}>
-        {currentTheme === "light" ? "Dark" : "Light"} Mode
-      </ThemeButton>
-      <Title>Cookies and Beyond</Title>
-      <Description>Delightful Piece Of heaven</Description>
 
-      <CookieList />
+      <Navbar toggleTheme={toggleTheme} />
+      <Switch>
+        <Route path="/cookies">
+          <CookieList />
+        </Route>
+        <Route exact path="/">
+          <Home />
+        </Route>
+      </Switch>
     </ThemeProvider>
   );
 }
