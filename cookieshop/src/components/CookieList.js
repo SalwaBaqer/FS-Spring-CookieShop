@@ -1,7 +1,7 @@
 import React from "react";
 
-// Cookies Data
-import cookies from "../cookies";
+//store
+import cookieStore from "../stores/cookieStore";
 
 // Styling
 import { ListWrapper } from "../styles";
@@ -11,9 +11,10 @@ import CookieItem from "./CookieItem";
 
 const CookieList = () => {
   //cookies list
-  const cookieList = cookies.map((cookie) => (
+  const cookieList = cookieStore.cookies.map((cookie) => (
     <CookieItem cookie={cookie} key={cookie.id} />
   ));
+
   return <ListWrapper>{cookieList}</ListWrapper>;
 };
 
