@@ -17,13 +17,13 @@ import { Route, Switch } from "react-router";
 //theme
 const theme = {
   light: {
-    mainColor: "#242424", // main font color
-    backgroundColor: "#fefafb", // main background color
+    mainColor: "#006d77", // main font color
+    backgroundColor: "#edf6f9", // main background color
     pink: "#F2637E",
   },
   dark: {
-    mainColor: "#fefafb", // main font color
-    backgroundColor: "#242424", // main background color
+    mainColor: "#edf6f9", // main font color
+    backgroundColor: "#006d77", // main background color
     pink: "#F2637E",
   },
 };
@@ -38,7 +38,7 @@ function App() {
     <ThemeProvider theme={theme[currentTheme]}>
       <GlobalStyle />
 
-      <Navbar toggleTheme={toggleTheme} />
+      <Navbar toggleTheme={toggleTheme} currentTheme={currentTheme} />
       <Switch>
         <Route path="/cookies">
           <CookieList />

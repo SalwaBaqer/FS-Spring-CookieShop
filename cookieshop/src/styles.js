@@ -73,6 +73,7 @@ export const Logo = styled(Link)`
 
   img {
     width: 5rem;
+    border-radius: 100%;
   }
 `;
 export const ToCookieList = styled(Link)`

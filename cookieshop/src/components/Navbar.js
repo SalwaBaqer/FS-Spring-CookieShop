@@ -3,7 +3,7 @@ import React from "react";
 import { ThemeButton, Logo, ToCookieList, NavStyled } from "../styles";
 
 //logo
-import logo from "../images/cookie-removebg-preview.png";
+import logo from "../images/cookie-logo.png";
 
 const NavBar = (props) => {
   return (
